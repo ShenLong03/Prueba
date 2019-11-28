@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prueba - Datos</title>
+
+    <!-- Custom fonts for this template-->    
+    <link href="wwwroot/lib/startbootstrap/vendor/fontawesome-free/css/all.css" rel="stylesheet" />
+    <link href="wwwroot/lib/fontawesome/css/all.css" rel="stylesheet" />
+    <!-- Custom styles for this template-->
+    <link href="wwwroot/lib/startbootstrap/css/sb-admin.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="wwwroot/css/site.css" />
+
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand navbar-primary bg-primary static-top">
+        <a class="navbar-brand mr-1" asp-area="" asp-controller="Home" asp-action="Index"><b class="text-light">Prueba</b></a>
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                    <span>Overview</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>My Account</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-star"></i>
+                    <span>Favorite</span>
+                </a>
+            </li>   
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-w fa-football-ball"></i>
+                    <span>Soccer</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                      
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Alemania</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-light" onclick="GetLegue('Soccer','Alemania', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                            <li><a class="dropdown-item text-light" onclick="GetLegue('Soccer','Alemania', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                            <li><a class="dropdown-item text-light"  onclick="GetLegue('Soccer','Alemania', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                        </ul>   
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Italia</a>
+                        <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-light" onclick="GetLegue('Soccer','Italia', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                                <li><a class="dropdown-item text-light" onclick="GetLegue('Soccer','Italia', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                        </ul>
+                    </li>                             
+                </ul>
+            </li>  
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-w fa-volleyball-ball"></i>
+                    <span>Volley Ball</span>
+                </a>
+                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">                      
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle text-light" href="#">Alemania</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-light" onclick="GetLegue('Volley Ball','Italia', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                            <li><a class="dropdown-item text-light"  onclick="GetLegue('Volley Ball','Italia', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                        </ul>   
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle text-light" href="#">Italia</a>
+                        <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-light" onclick="GetLegue('Volley Ball','Italia', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                                <li><a class="dropdown-item text-light" onclick="GetLegue('Volley Ball','Italia', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                        </ul>
+                    </li>                             
+                </ul>
+            </li>       
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-w fa-basketball-ball"></i>
+                    <span>Basket Ball</span>
+                </a>
+                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">                      
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle text-light" href="#">NFL</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-light" onclick="GetLegue('Basket Ball','NFL', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                            <li><a class="dropdown-item text-light" onclick="GetLegue('Basket Ball','NFL', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                            <li><a class="dropdown-item text-light" onclick="GetLegue('Basket Ball','NFL', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                        </ul>   
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle text-light" href="#">Premier Legue</a>
+                        <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-light" onclick="GetLegue('Basket Ball','Premier Legue', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                                <li><a class="dropdown-item text-light" onclick="GetLegue('Basket Ball','Premier Legue', 'Liga')">30- Equipo Visita<br/>20- Equipo Casa</a></li>                                           
+                        </ul>
+                    </li>                             
+                </ul>
+            </li>        
+        </ul>
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <div class="row ocultar">
+                    <div class="col-8">
+                        <div id="main" class="row">
+                            <div id="listPlays" class="col-12">
+                                <div class="col-12">
+                                        <div class="card card-primary">
+                                            <div class="card-header bg-primary">
+                                                <h6>
+                                                    <span class="deportTitle">Soccer</span>       
+                                                    <span class="subDeportTitle">Brazil</span>       
+                                                    <span class="ligaTitle">Liga</span>     
+                                                    <span id="numberLiga">1</span>  
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <table class="table table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>25 1st Hait</th>
+                                                        <th>S</th>
+                                                        <th>M</th>
+                                                        <th>T</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>30-Equipo visita</td>
+                                                        <td class="bg-light">
+                                                        </td>
+                                                        <td class="bg-light">-30/ 48</td>
+                                                        <td class="bg-light"></td>
+                                                        <td rowspan="2">
+                                                            <div>
+                                                                <center>
+                                                                    <span class="fas fa-star text-warning"></span>
+                                                                    <br/>
+                                                                    <a onclick="GetDetailsPlay();"><i class="fas fa-plus"></i></a>
+                                                                </center>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20-Equipo casa</td>
+                                                        <td class="bg-light"></td>
+                                                        <td class="bg-light">55.87</td>
+                                                        <td class="bg-light"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td class="bg-light"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>     
+
+                                </div>     
+                                <hr />
+                                <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header bg-primary">
+                                                <h6>
+                                                    <span class="deportTitle">Soccer</span>       
+                                                    <span class="subDeportTitle">Brazil</span>       
+                                                    <span class="ligaTitle">Liga</span>     
+                                                    <span id="numberLiga">2</span>      
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <table class="table table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>25 1st Hait</th>
+                                                        <th>S</th>
+                                                        <th>M</th>
+                                                        <th>T</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>30-Equipo visita</td>
+                                                        <td class="bg-light">
+                                                            55-89
+                                                        </td>
+                                                        <td class="bg-light"></td>
+                                                        <td class="bg-light">-10.56</td>
+                                                        <td rowspan="2">
+                                                            <div>
+                                                                <center>
+                                                                    <span class="fas fa-star text-warning"></span>
+                                                                    <br/>
+                                                                    <a onclick="GetDetailsPlay();"><i class="fas fa-plus"></i></a>
+                                                                </center>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20-Equipo casa</td>
+                                                        <td class="bg-light">-14.56</td>
+                                                        <td class="bg-light">5/47</td>
+                                                        <td class="bg-light">98</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td class="bg-light">114</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>     
+                                </div>                      
+                            </div>    
+                        </div>                                                                            
+                    </div>                  
+                    <div class="col-4">
+                        <div class="card">
+                             <div class="card-header bg-primary">
+                                <h6>Betslip</h6>
+                             </div>                                                       
+                        </div>
+                        <br />
+                        <div class="card">
+                            <div class="card-body">
+                                  
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <!-- /.container-fluid -->
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>
+                            &copy; 2019 - Prueba - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="wwwroot/lib/startbootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="wwwroot/lib/startbootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="wwwroot/lib/startbootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="wwwroot/lib/startbootstrap/js/sb-admin.min.js"></script>
+
+    <script src="wwwroot/lib/fontawesome/js/all.js"></script>   
+    <script src="wwwroot/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>
